@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 App Store Screenshot Generator
-Usage: python generate.py --app PitchMonitor [--device iphone|ipad|all]
+Usage: python generate.py --app MyApp [--device iphone|ipad|all]
 """
 
 import argparse

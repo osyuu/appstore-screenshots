@@ -1,69 +1,42 @@
 app:
   name: "MyApp"
 
-# 各裝置尺寸設定
 devices:
   iphone:
-    output_size: [1284, 2778]    # 6.7" iPhone (App Store accepted size)
-    device_width_ratio: 0.78     # 裝置框佔畫面寬度比例
-    font_headline_ratio: 0.075   # headline 字體佔畫面高度比例
-    font_sub_ratio: 0.032        # subtitle 字體比例
-    wave_y_ratio: 0.78           # 裝飾線垂直位置
-    wave_amplitude_ratio: 0.13   # 裝飾線振幅
+    output_size: [1284, 2778]     # 6.7" iPhone (App Store accepted size)
+    device_width_ratio: 0.78
+    font_headline_ratio: 0.075
+    font_sub_ratio: 0.032
+    wave_y_ratio: 0.78
+    wave_amplitude_ratio: 0.13
 
   ipad:
-    output_size: [2048, 2732]    # 12.9" iPad Pro
+    output_size: [2048, 2732]     # 12.9" iPad Pro
     device_width_ratio: 0.72
     font_headline_ratio: 0.065
     font_sub_ratio: 0.028
     wave_y_ratio: 0.78
     wave_amplitude_ratio: 0.13
 
-# 全局樣式
 style:
   background_color: [245, 245, 247]
-  font: "SF-Pro-Display-Bold.otf"
+  font: "SF-Pro-Display-Bold.otf"   # place in assets/fonts/
   bezel_ratio: 0.028
   bottom_margin_ratio: 0.010
 
-# 截圖定義（iphone / ipad 共用文案，各自對應不同截圖資料夾）
 screenshots:
-  - id: mic
-    iphone: "01_mic.png"
-    ipad: "01_mic.png"
-    headline: "Know your pitch."
-    subheadline: "Instantly."
+  - id: screen1
+    iphone: "01_screen1.png"
+    ipad: "01_screen1.png"
+    headline: "Your headline here."
+    subheadline: "Optional subheadline."
     accent_color: [20, 20, 20]
     text_color: [100, 100, 100]
 
-  - id: tuner
-    iphone: "02_tuner.png"
-    ipad: "02_tuner.png"
-    headline: "Real-time frequency."
-    subheadline: "Every note."
-    accent_color: [20, 20, 20]
-    text_color: [100, 100, 100]
-
-  - id: analyze
-    iphone: "03_analyze.png"
-    ipad: "03_analyze.png"
-    headline: "Analyze any audio file."
+  - id: screen2
+    iphone: "02_screen2.png"
+    ipad: "02_screen2.png"
+    headline: "Another feature."
     subheadline: null
-    accent_color: [20, 20, 20]
-    text_color: [100, 100, 100]
-
-  - id: dual
-    iphone: "04_dual.png"
-    ipad: "04_dual.png"
-    headline: "Sing along."
-    subheadline: "See the gap."
-    accent_color: [20, 20, 20]
-    text_color: [100, 100, 100]
-
-  - id: cents
-    iphone: "05_cents.png"
-    ipad: "05_cents.png"
-    headline: "How close are you?"
-    subheadline: "Down to the cent."
     accent_color: [20, 20, 20]
     text_color: [100, 100, 100]
