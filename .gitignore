@@ -6,9 +6,6 @@ __pycache__/
 output/*
 !output/.gitkeep
 
-# Root-level screenshots
-screenshots/*
-
 # App screenshots (injected manually)
 apps/*/screenshots/*
 !apps/*/screenshots/**/.gitkeep
