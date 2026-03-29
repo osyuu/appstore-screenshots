@@ -11,6 +11,7 @@ screenshots/*
 
 # App screenshots (injected manually)
 apps/*/screenshots/*
+!apps/*/screenshots/**/.gitkeep
 
 # Only MyApp (sample) is tracked; all real app configs stay local
 apps/*/
