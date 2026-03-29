@@ -10,7 +10,4 @@ output/*
 screenshots/*
 
 # App screenshots (injected manually)
-apps/*/screenshots/iphone/*
-apps/*/screenshots/ipad/*
-!apps/*/screenshots/iphone/.gitkeep
-!apps/*/screenshots/ipad/.gitkeep
+apps/*/screenshots/*
