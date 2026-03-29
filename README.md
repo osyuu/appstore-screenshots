@@ -1,6 +1,6 @@
 # App Store Screenshot Generator
 
-Generates App Store screenshots by compositing app screenshots onto a styled canvas with device frames, decorative pitch-line background, and text overlays.
+Generates App Store screenshots by compositing app screenshots onto a styled canvas with device frames, decorative wave background, and text overlays.
 
 ## Requirements
 
@@ -14,30 +14,39 @@ make install
 ## Usage
 
 ```
-.venv/bin/python generate.py --app <AppName> [--device iphone|ipad|all]
+make generate APP=MyApp
+make generate APP=MyApp DEVICE=iphone
+make generate APP=MyApp DEVICE=ipad
 ```
 
-Examples:
+Or directly:
 
 ```
-.venv/bin/python generate.py --app MyApp
-.venv/bin/python generate.py --app MyApp --device iphone
-.venv/bin/python generate.py --app MyApp --device ipad
+.venv/bin/python generate.py --app MyApp [--device iphone|ipad|all]
 ```
 
 Output is written to `output/<AppName>/iphone/` and `output/<AppName>/ipad/`.
 
 ## Adding a new app
 
-1. Create the app directory:
+1. Create the app directory and place source screenshots:
 
 ```
 apps/
 └── MyApp/
     ├── config.yaml
     └── screenshots/
-        ├── iphone/   ← source screenshots
-        └── ipad/     ← source screenshots
+        ├── 01_screen1.png
+        └── 02_screen2.png
+```
+
+Screenshots are shared across devices by default. If a device needs different source images, place them in a subdirectory:
+
+```
+screenshots/
+├── 01_screen1.png       ← shared (fallback)
+└── ipad/
+    └── 01_screen1.png   ← iPad-specific override
 ```
 
 2. Write `config.yaml` (copy from the example app as a template):
@@ -48,7 +57,7 @@ app:
 
 devices:
   iphone:
-    output_size: [1284, 2778]     # App Store accepted: 1284×2778 or 1242×2688
+    output_size: [1284, 2778]     # App Store accepted: 1284x2778 or 1242x2688
     device_width_ratio: 0.78
     font_headline_ratio: 0.075
     font_sub_ratio: 0.032
@@ -85,9 +94,9 @@ screenshots:
 
 | Device | Size |
 |--------|------|
-| iPhone (6.7") | 1284 × 2778 |
-| iPhone (6.5") | 1242 × 2688 |
-| iPad Pro 12.9" | 2048 × 2732 |
+| iPhone (6.7") | 1284 x 2778 |
+| iPhone (6.5") | 1242 x 2688 |
+| iPad Pro 12.9" | 2048 x 2732 |
 
 ## Project structure
 
@@ -97,18 +106,13 @@ appstore-screenshots/
 ├── requirements.txt
 ├── Makefile
 ├── assets/
-│   └── fonts/          # font files (e.g. SF-Pro-Display-Bold.otf)
-├── apps/
-│   └── YourApp/
-│       ├── config.yaml
-│       └── screenshots/
-│           ├── iphone/
-│           └── ipad/
-└── output/             # generated images (git-ignored)
+│   └── fonts/
+└── apps/
+    └── YourApp/
+        ├── config.yaml
+        └── screenshots/
 ```
 
 ## Fonts
 
-The generator looks for fonts in `assets/fonts/`. If the specified font is not found, it falls back to system fonts (SF Pro → Helvetica → Arial).
-
-To use SF Pro Display Bold, copy `SF-Pro-Display-Bold.otf` from a Mac into `assets/fonts/`.
+The generator looks for fonts in `assets/fonts/`. If the specified font is not found, it falls back to system fonts (SF Pro, Helvetica, Arial).

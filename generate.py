@@ -139,6 +139,8 @@ def composite(panoramic_bg: Image.Image, slot_x: int,
 
     ss_path = app_dir / "screenshots" / device_key / item[device_key]
     if not ss_path.exists():
+        ss_path = app_dir / "screenshots" / item[device_key]
+    if not ss_path.exists():
         print(f"  ⚠️  截圖不存在: {ss_path}")
         return canvas.convert("RGB")
 
