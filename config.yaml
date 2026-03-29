@@ -1,0 +1,48 @@
+settings:
+  device: "iphone16promax"          # 裝置名稱（對應 frames/ 下的 PNG）
+  screenshot_size: [1320, 2868]     # 裝置截圖尺寸（6.9" 原始解析度）
+  output_size: [1320, 2868]         # 輸出尺寸
+  background_color: [245, 245, 247] # 灰白背景（Apple off-white）
+  font: "SF-Pro-Display-Bold.otf"   # 放在 assets/fonts/
+  font_fallback: null               # 若找不到 SF Pro 則用系統字型
+
+screenshots:
+  - id: mic
+    screenshot: "01_mic.png"
+    headline: "Know your pitch."
+    subheadline: "Instantly."
+    background_color: [245, 245, 247]
+    text_color: [30, 30, 30]
+    accent_color: [20, 20, 20]
+
+  - id: tuner
+    screenshot: "02_tuner.png"
+    headline: "Real-time frequency."
+    subheadline: "Every note."
+    background_color: [245, 245, 247]
+    text_color: [30, 30, 30]
+    accent_color: [20, 20, 20]
+
+  - id: analyze
+    screenshot: "03_analyze.png"
+    headline: "Analyze any audio file."
+    subheadline: null
+    background_color: [245, 245, 247]
+    text_color: [30, 30, 30]
+    accent_color: [20, 20, 20]
+
+  - id: dual
+    screenshot: "04_dual.png"
+    headline: "Sing along."
+    subheadline: "See the gap."
+    background_color: [245, 245, 247]
+    text_color: [30, 30, 30]
+    accent_color: [20, 20, 20]
+
+  - id: cents
+    screenshot: "05_cents.png"
+    headline: "How close are you?"
+    subheadline: "Down to the cent."
+    background_color: [245, 245, 247]
+    text_color: [30, 30, 30]
+    accent_color: [20, 20, 20]

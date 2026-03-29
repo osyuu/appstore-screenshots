@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Generated output
+output/*
+!output/.gitkeep
+
+# App screenshots (injected manually)
+apps/*/screenshots/iphone/*
+apps/*/screenshots/ipad/*
+!apps/*/screenshots/iphone/.gitkeep
+!apps/*/screenshots/ipad/.gitkeep
